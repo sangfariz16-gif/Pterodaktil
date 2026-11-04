@@ -45,7 +45,7 @@ details p{font-family:system-ui,sans-serif;font-size:14px;color:#4A463C}
 <body>
 <header><div><b>PTERODAKTIL</b><br><span>FOSSILIZE METAVERSE</span></div><a class="mintbtn" href="#mint">Mint</a></header>
 <div class="wrap">
-<div class="banner">MINT OPENS TODAY AT 16:00 UTC</div>
+<div class="banner">MINT IS LIVE</div>
 <div class="hero"><img src="assets/hero.jpg" alt="Paleo-Sky Glider fossil slab">
 <h1>PTERODAKTIL</h1>
 <p class="tagline">Ancient Bones, Golden Legends.</p>
@@ -90,12 +90,12 @@ details p{font-family:system-ui,sans-serif;font-size:14px;color:#4A463C}
 <p id="liveStats">Minted: … / 1,600 · Price: … · Status: …</p>
 <p id="statNote" style="display:none;color:#7A6420">Live stats unavailable — check again in a moment.</p>
 <p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></p>
-<button class="btn" id="mintBtn" disabled>Mint Opens 16:00 UTC</button>
-<p id="mintNote">Mint opens today at 16:00 UTC. The button activates automatically once mint is open.</p>
-<p style="margin-top:10px"><b>Agent Mint:</b> paste the prompt below into your own AI agent. Mint opens today at 16:00 UTC.</p>
+<button class="btn" id="mintBtn" disabled>Mint</button>
+<p id="mintNote">Mint is open now — choose a quantity and confirm in your wallet.</p>
+<p style="margin-top:10px"><b>Agent Mint:</b> paste the prompt below into your own AI agent. Mint is open now.</p>
 <pre style="white-space:pre-wrap;word-break:break-word;background:#0F1E3D;border-radius:12px;padding:14px;font-size:13px;line-height:1.5;color:#ECE7DB">You are my minting agent for the PTERODAKTIL NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-CONTRACT ADDRESS: 0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b — mint opens today at 16:00 UTC. If mintOpen() is false, STOP and tell me mint is not open yet.
+CONTRACT ADDRESS: 0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b — mint is open now. If mintOpen() is false, STOP and tell me mint is not open yet.
 
 COLLECTION: PTERODAKTIL — 1,600 supply, BEP-721, RANDOM token IDs (swap-and-pop pool)
 PRICE: 0.0005 BNB each (flat)
@@ -114,21 +114,21 @@ Then ask me to confirm the quantity (1–11, never more than 11 minus what I alr
 <details><summary>What is PTERODAKTIL?</summary><p>A 1,600-piece NFT collection of fossil specimens: 16 unique specimens × 100 editions each. Each token shows a golden skeleton preserved on a white marble slab with a glowing blue runic border.</p></details>
 <details><summary>How much does it cost?</summary><p>0.0005 BNB per NFT, flat price for all tokens.</p></details>
 <details><summary>How many can I mint?</summary><p>Max 11 per wallet, cumulative across all mints.</p></details>
-<details><summary>When does mint open?</summary><p>Today at 16:00 UTC. The contract is deployed (0xCb3b…fc1b) and minting starts automatically at 16:00 UTC.</p></details>
+<details><summary>When does mint open?</summary><p>Mint is open now — it opened today at 16:00 UTC. Contract 0xCb3b…fc1b.</p></details>
 <details><summary>What do I receive?</summary><p>A BEP-721 token on BNB Chain with the specimen artwork and metadata. Token IDs are drawn randomly (1–1,600); the specimen of each token follows its ID range (100 editions per specimen).</p></details>
 <details><summary>Are the cards random?</summary><p>Yes. Each mint draws random token IDs from the remaining pool, so the 11 IDs in one transaction are always different from each other. They usually span several specimens (about 8–9 different kinds per 11-mint on average), but 11 different specimens are not guaranteed. The randomness is on-chain pseudo-random, not Chainlink VRF.</p></details>
 <details><summary>Is this affiliated with Binance?</summary><p>No. PTERODAKTIL is an independent project on BNB Chain, not a Binance collaboration.</p></details>
 
 <h2>Support</h2>
 <div class="card"><p>Follow PTERODAKTIL on X for updates.</p>
-<div class="cta"><a href="https://x.com/intent/follow?screen_name=ptrdktlnft" target="_blank" rel="noopener">Follow on X</a><a class="gold" href="https://x.com/ptrdktlnft" target="_blank" rel="noopener">Visit Profile</a></div>
+<div class="cta"><a href="https://x.com/intent/follow?screen_name=ptrdktlnft" target="_blank" rel="noopener">Follow on X</a><a href="https://x.com/intent/tweet?text=%F0%9F%A6%B4%20PTERODAKTIL%20mint%20is%20LIVE%20NOW%21%201%2C600%20fossils%20%C2%B7%2016%20specimens%20%C2%B7%20random%20mint%20%C2%B7%200.0005%20BNB%20%C2%B7%20max%2011/wallet.%20Mint%3A%20https%3A//www.pterodaktil.fun/%20%40ptrdktlnft%20%40BNBCHAIN%20%40binance%20%23PTERODAKTIL%20%23NFT%20%23BNBChain%20%23BSC%20%23NFTCommunity%20%23NFTCollection%20%23CryptoArt%20%23Web3%20%23NFTCollector" target="_blank" rel="noopener">Share on X</a><a class="gold" href="https://x.com/ptrdktlnft" target="_blank" rel="noopener">Visit Profile</a></div>
 <p>Official X: @ptrdktlnft</p></div>
 
 <h2>Contract</h2>
 <div class="card"><p>Contract: <span id="caddr">0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b</span></p>
 <div class="cta"><a href="#" onclick="navigator.clipboard.writeText('0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b');return false;">Copy Address</a><a class="gold" href="https://bscscan.com/address/0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b" target="_blank" rel="noopener">View on BscScan</a></div></div>
 
-<p class="foot">PTERODAKTIL — Mint opens today at 16:00 UTC. Official X: @ptrdktlnft. NFTs are collectible items and do not promise any return.</p>
+<p class="foot">PTERODAKTIL — Mint is live now. Official X: @ptrdktlnft. NFTs are collectible items and do not promise any return.</p>
 </div>
 
 <script>
