@@ -10,90 +10,104 @@
 <meta property="og:image" content="https://pterodaktil.vercel.app/assets/hero.jpg">
 <meta name="twitter:image" content="https://pterodaktil.vercel.app/assets/hero.jpg">
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Georgia,'Times New Roman',serif;background:#ECE7DB;color:#1C1B1E;line-height:1.55}
-.wrap{max-width:720px;margin:0 auto;padding:16px}
-header{position:sticky;top:0;z-index:10;background:#0F1E3D;color:#ECE7DB;padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:3px solid #B08D3E}
-header b{font-size:20px;letter-spacing:2px}header span{font-size:12px;color:#C9B98A}
-header a.mintbtn{margin-left:auto;background:#B08D3E;color:#0F1E3D;border-radius:999px;padding:8px 18px;font-weight:800;text-decoration:none;font-family:system-ui,sans-serif;font-size:14px}
-nav{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
-nav a{font-family:system-ui,sans-serif;font-size:13px;font-weight:700;color:#0F1E3D;border:1px solid #B08D3E;border-radius:999px;padding:6px 12px;text-decoration:none;background:#F7F3E8}
-.banner{background:#0F1E3D;border:1px solid #B08D3E;border-radius:12px;padding:10px 14px;text-align:center;font-weight:800;font-size:14px;color:#E8C96A;font-family:system-ui,sans-serif}
-.hero{text-align:center;margin:16px 0 4px}.hero img{width:100%;max-width:560px;border-radius:16px;border:3px solid #B08D3E}
-h1{font-size:36px;margin:12px 0 2px;letter-spacing:3px;color:#0F1E3D}
-.tagline{font-style:italic;color:#7A6420;font-size:18px;margin:4px 0}
-.sub{color:#4A463C;margin:8px 0 16px}
-.cta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
-.cta a{font-family:system-ui,sans-serif;background:#0F1E3D;color:#ECE7DB;border-radius:12px;padding:12px 22px;font-weight:800;text-decoration:none}
-.cta a.gold{background:#B08D3E;color:#0F1E3D}
-h2{font-size:22px;margin:28px 0 10px;color:#0F1E3D;border-bottom:2px solid #B08D3E;padding-bottom:6px}
-.card{border:1px solid #B08D3E;border-radius:14px;padding:14px;background:#F7F3E8;scroll-margin-top:120px}
-.card b{font-size:17px;color:#0F1E3D}.card p{margin:6px 0;color:#4A463C;font-size:14px;font-family:system-ui,sans-serif}
-table{width:100%;border-collapse:collapse;font-size:14px;font-family:system-ui,sans-serif}td,th{border-bottom:1px solid #D8CFB8;padding:8px 4px;text-align:left}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tile{border:1px solid #B08D3E;border-radius:14px;overflow:hidden;text-align:center;background:#F7F3E8}
-.tile img{width:100%;display:block}.tile div{padding:8px 6px;font-size:13px;font-family:system-ui,sans-serif}
-.tile b{display:block;font-size:14px;color:#0F1E3D}.tile span{color:#7A6420}
-.note{background:#F7F3E8;border:1px solid #B08D3E;border-radius:12px;padding:12px 14px;font-size:14px;color:#4A463C;font-family:system-ui,sans-serif}
-.btn{display:block;width:100%;text-align:center;background:#B08D3E;color:#0F1E3D;border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:800;cursor:pointer;font-family:system-ui,sans-serif}
-.btn:disabled{background:#9A9186;cursor:not-allowed;color:#ECE7DB}
-details{border:1px solid #B08D3E;border-radius:12px;padding:12px 14px;margin:8px 0;background:#F7F3E8}
-details summary{font-weight:700;cursor:pointer;color:#0F1E3D;font-family:system-ui,sans-serif}
-details p{font-family:system-ui,sans-serif;font-size:14px;color:#4A463C}
-.foot{color:#8A8371;font-size:13px;text-align:center;margin:28px 0 8px;font-family:system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#12100E;color:#EDE6D6;line-height:1.6;padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden}
+a{color:#D9A441}
+.hero{min-height:560px;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:url('https://pterodaktil.vercel.app/assets/hero.jpg') center 30%/cover no-repeat;position:relative}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,14,.96) 8%,rgba(18,16,14,.45) 55%,rgba(18,16,14,.25))}
+.hero-in{position:relative;z-index:1;padding:28px 20px 40px}
+.hero-in h1{font-family:Georgia,serif;font-size:clamp(38px,12vw,56px);letter-spacing:4px;margin:0;line-height:1}
+.hero-in .tag{font-family:Georgia,serif;font-style:italic;font-size:20px;color:#D9A441;margin:10px 0}
+.hero-in p{color:#CFC6B2;max-width:560px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cta-row a{background:#D9A441;color:#12100E;border-radius:999px;padding:13px 26px;font-weight:800;text-decoration:none}
+.cta-row a.ghost{background:transparent;color:#EDE6D6;border:1px solid #D9A441}
+section{padding:36px 20px;max-width:760px;margin:0 auto}
+section h2{font-family:Georgia,serif;font-size:30px;color:#EDE6D6;margin:0 0 6px}
+section .kicker{color:#D9A441;font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase}
+section p.lede{color:#CFC6B2}
+.scroller{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 20px 18px;margin:0 -20px}
+.scroller::-webkit-scrollbar{display:none}
+.spec{min-width:min(230px,72vw);scroll-snap-align:start;background:#1D1A16;border:1px solid #3A332A;border-radius:16px;overflow:hidden}
+.spec img{width:100%;display:block}
+.spec div{padding:12px}
+.spec b{font-family:Georgia,serif;font-size:17px;display:block}
+.spec span{color:#D9A441;font-size:13px}
+.notes{border-left:3px solid #D9A441;padding-left:16px}
+.notes div{margin:14px 0}
+.notes b{display:block;color:#D9A441;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.notes span{color:#EDE6D6}
+.ticket{background:#1D1A16;border:1px solid #D9A441;border-radius:20px;padding:22px}
+.ticket .big{font-family:Georgia,serif;font-size:34px;margin:4px 0}
+.ticket select{background:#12100E;color:#EDE6D6;border:1px solid #D9A441;border-radius:10px;padding:10px;font-size:16px}
+.btn{display:block;width:100%;text-align:center;background:#D9A441;color:#12100E;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;cursor:pointer;margin-top:14px}
+.btn:disabled{background:#5A5348;cursor:not-allowed;color:#CFC6B2}
+.journal article{background:#1D1A16;border:1px solid #3A332A;border-radius:14px;padding:16px;margin:12px 0}
+.journal h3{font-family:Georgia,serif;margin:0 0 4px;font-size:18px;color:#EDE6D6}
+.journal p{margin:0;color:#CFC6B2;font-size:14px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0A0908;border:1px solid #3A332A;border-radius:12px;padding:14px;font-size:12px;line-height:1.5;color:#CFC6B2}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#1D1A16;border-top:1px solid #D9A441;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.dock span{font-weight:800}
+.dock span small{display:block;color:#9A8F7A;font-size:12px;font-weight:400}
+.dock a{margin-left:auto;background:#D9A441;color:#12100E;border-radius:999px;padding:11px 26px;font-weight:800;text-decoration:none;white-space:nowrap}
+.foot{color:#9A8F7A;font-size:13px;text-align:center;padding:10px 20px 30px}
 </style>
 </head>
 <body>
-<header><div><b>PTERODAKTIL</b><br><span>FOSSILIZE METAVERSE</span></div><a class="mintbtn" href="#mint">Mint</a></header>
-<div class="wrap">
-<div class="banner">MINT IS LIVE</div>
-<div class="hero"><img src="assets/hero.jpg" alt="Paleo-Sky Glider fossil slab">
+<div class="hero"><div class="hero-in">
 <h1>PTERODAKTIL</h1>
-<p class="tagline">Ancient Bones, Golden Legends.</p>
-<p class="sub">The Fossilize Metaverse — Complete Paleontological Collection. Sixteen unique fossil specimens, preserved as golden skeletons on fine white marble slabs, framed in glass and sealed with ancient runes.</p>
-<div class="cta"><a href="#mint">Mint</a><a class="gold" href="#specimens">View Specimens</a></div>
+<p class="tag">Ancient Bones, Golden Legends.</p>
+<p>Sixteen fossil specimens, preserved as golden skeletons on white marble slabs, framed in glass and sealed with ancient runes. Every mint is a blind dig — you never know which specimen comes out of the ground.</p>
+<div class="cta-row"><a href="#mint">Excavate — 0.0005 BNB</a><a class="ghost" href="#dig">Explore the dig</a></div>
+</div></div>
+
+<section id="dig">
+<p class="kicker">The dig site</p>
+<h2>16 specimens in the ground</h2>
+<p class="lede">Swipe sideways through the wall. Each specimen has exactly 100 editions in the ground — 1,600 fossils in total. The numbers printed on the artwork cards (#001, #333, #17…) are sample edition numbers from the artwork itself, not token IDs.</p>
+</section>
+<div class="scroller">
+<div class="spec"><img src="https://pterodaktil.vercel.app/assets/paleo-sky-glider.jpg" alt="Paleo-Sky Glider"><div><b>Paleo-Sky Glider</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/tri-horn-titan.jpg" alt="Tri-Horn Titan"><div><b>Tri-Horn Titan</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/plate-back-strider.jpg" alt="Plate-Back Strider"><div><b>Plate-Back Strider</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/raptor-striker.jpg" alt="Raptor Striker"><div><b>Raptor Striker</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/tyrant-lizard-king.jpg" alt="Tyrant Lizard King"><div><b>Tyrant Lizard King</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/long-neck-giant.jpg" alt="Long-Neck Giant"><div><b>Long-Neck Giant</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/swimmer-of-deep.jpg" alt="Swimmer of Deep"><div><b>Swimmer of Deep</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/saber-tooth-hunter.jpg" alt="Saber-Tooth Hunter"><div><b>Saber-Tooth Hunter</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/woolly-titan.jpg" alt="Woolly Titan"><div><b>Woolly Titan</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/bone-head-charger.jpg" alt="Bone-Head Charger"><div><b>Bone-Head Charger</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/sail-back-scourge.jpg" alt="Sail-Back Scourge"><div><b>Sail-Back Scourge</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/prime-avian.jpg" alt="Prime Avian"><div><b>Prime Avian</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/crested-caller.jpg" alt="Crested Caller"><div><b>Crested Caller</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/ostrich-mimic.jpg" alt="Ostrich Mimic"><div><b>Ostrich Mimic</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/terrible-claw.jpg" alt="Terrible Claw"><div><b>Terrible Claw</b><span>100 editions</span></div></div>
+<div class="spec"><img loading="lazy" decoding="async" src="https://pterodaktil.vercel.app/assets/hollow-bone-walker.jpg" alt="Hollow-Bone Walker"><div><b>Hollow-Bone Walker</b><span>100 editions</span></div></div>
 </div>
 
-<h2>01 — Collection</h2>
-<div class="card"><table>
-<tr><td>Chain</td><td>BNB Chain mainnet (56)</td></tr>
-<tr><td>Standard</td><td>BEP-721</td></tr>
-<tr><td>Supply</td><td>1,600 — 16 specimens × 100 editions each</td></tr>
-<tr><td>Price</td><td>0.0005 BNB each (flat)</td></tr>
-<tr><td>Max per wallet</td><td>11 (cumulative)</td></tr>
-<tr><td>Token IDs</td><td>Random draw, 1–1,600 (swap-and-pop pool)</td></tr>
-</table>
-<p style="margin-top:10px">Note: the numbers printed on the artwork cards (#001, #333, #17…) are sample edition numbers from the artwork itself, not token IDs. Minted token IDs are drawn RANDOMLY from the remaining pool, so one wallet minting 11 usually receives several different specimens — but 11 different specimens are not guaranteed, since each specimen has 100 editions.</p></div>
-
-<h2 id="specimens">02 — Specimens</h2>
-<div class="tiles">
-<div class="tile"><img src="assets/paleo-sky-glider.jpg" alt="Paleo-Sky Glider"><div><b>Paleo-Sky Glider</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/tri-horn-titan.jpg" alt="Tri-Horn Titan"><div><b>Tri-Horn Titan</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/plate-back-strider.jpg" alt="Plate-Back Strider"><div><b>Plate-Back Strider</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/raptor-striker.jpg" alt="Raptor Striker"><div><b>Raptor Striker</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/tyrant-lizard-king.jpg" alt="Tyrant Lizard King"><div><b>Tyrant Lizard King</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/long-neck-giant.jpg" alt="Long-Neck Giant"><div><b>Long-Neck Giant</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/swimmer-of-deep.jpg" alt="Swimmer of Deep"><div><b>Swimmer of Deep</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/saber-tooth-hunter.jpg" alt="Saber-Tooth Hunter"><div><b>Saber-Tooth Hunter</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/woolly-titan.jpg" alt="Woolly Titan"><div><b>Woolly Titan</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/bone-head-charger.jpg" alt="Bone-Head Charger"><div><b>Bone-Head Charger</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/sail-back-scourge.jpg" alt="Sail-Back Scourge"><div><b>Sail-Back Scourge</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/prime-avian.jpg" alt="Prime Avian"><div><b>Prime Avian</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/crested-caller.jpg" alt="Crested Caller"><div><b>Crested Caller</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/ostrich-mimic.jpg" alt="Ostrich Mimic"><div><b>Ostrich Mimic</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/terrible-claw.jpg" alt="Terrible Claw"><div><b>Terrible Claw</b><span>100 editions</span></div></div>
-<div class="tile"><img src="assets/hollow-bone-walker.jpg" alt="Hollow-Bone Walker"><div><b>Hollow-Bone Walker</b><span>100 editions</span></div></div>
+<section>
+<p class="kicker">Field notes</p>
+<h2>What the ground holds</h2>
+<div class="notes">
+<div><b>Chain</b><span>BNB Chain mainnet (56), BEP-721</span></div>
+<div><b>Supply</b><span>1,600 — 16 specimens × 100 editions each</span></div>
+<div><b>Price</b><span>0.0005 BNB each, flat for every token</span></div>
+<div><b>Per wallet</b><span>11 total, cumulative across all mints</span></div>
+<div><b>How IDs are drawn</b><span>Random, 1–1,600, from a swap-and-pop pool — one wallet minting 11 always gets 11 different IDs, usually spanning several specimens, but 11 different specimens are not guaranteed</span></div>
 </div>
+</section>
 
-<h2 id="mint">03 — Mint</h2>
-<div class="card">
-<p><b>How mint works:</b> 1. Connect your wallet (BSC mainnet). 2. Choose a quantity (1–11). 3. Confirm the mint and pay in BNB — you receive RANDOM token IDs from the remaining pool.</p>
+<section id="mint">
+<p class="kicker">Expedition ticket</p>
+<h2>Dig up a fossil</h2>
+<div class="ticket">
 <p id="liveStats">Minted: … / 1,600 · Price: … · Status: …</p>
-<p id="statNote" style="display:none;color:#7A6420">Live stats unavailable — check again in a moment.</p>
+<p id="statNote" style="display:none;color:#D9A441">Live stats unavailable — check again in a moment.</p>
+<p>Connect your wallet on BSC mainnet, pick how many fossils to dig up, confirm and pay in BNB. Each mint draws random token IDs from the remaining pool.</p>
 <p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></p>
 <button class="btn" id="mintBtn" disabled>Mint</button>
 <p id="mintNote">Mint is open now — choose a quantity and confirm in your wallet.</p>
-<p style="margin-top:10px"><b>Agent Mint:</b> paste the prompt below into your own AI agent. Mint is open now.</p>
-<pre style="white-space:pre-wrap;word-break:break-word;background:#0F1E3D;border-radius:12px;padding:14px;font-size:13px;line-height:1.5;color:#ECE7DB">You are my minting agent for the PTERODAKTIL NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+<p><b>Agent Mint:</b> paste the prompt below into your own AI agent. Mint is open now.</p>
+<pre>You are my minting agent for the PTERODAKTIL NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
 CONTRACT ADDRESS: 0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b — mint is open now. If mintOpen() is false, STOP and tell me mint is not open yet.
 
@@ -109,27 +123,28 @@ Before minting, you MUST call these read-only functions and report the exact res
 
 Then ask me to confirm the quantity (1–11, never more than 11 minus what I already minted). Only after confirmation, call mint(QUANTITY) and send exactly currentPrice x QUANTITY in BNB. Do NOT approve any token spending — this mint is paid in native BNB only. After the transaction, report the transaction hash and new token IDs.</pre>
 </div>
+</section>
 
-<h2>04 — FAQ</h2>
-<details><summary>What is PTERODAKTIL?</summary><p>A 1,600-piece NFT collection of fossil specimens: 16 unique specimens × 100 editions each. Each token shows a golden skeleton preserved on a white marble slab with a glowing blue runic border.</p></details>
-<details><summary>How much does it cost?</summary><p>0.0005 BNB per NFT, flat price for all tokens.</p></details>
-<details><summary>How many can I mint?</summary><p>Max 11 per wallet, cumulative across all mints.</p></details>
-<details><summary>When does mint open?</summary><p>Mint is open now — it opened today at 16:00 UTC. Contract 0xCb3b…fc1b.</p></details>
-<details><summary>What do I receive?</summary><p>A BEP-721 token on BNB Chain with the specimen artwork and metadata. Token IDs are drawn randomly (1–1,600); the specimen of each token follows its ID range (100 editions per specimen).</p></details>
-<details><summary>Are the cards random?</summary><p>Yes. Each mint draws random token IDs from the remaining pool, so the 11 IDs in one transaction are always different from each other. They usually span several specimens (about 8–9 different kinds per 11-mint on average), but 11 different specimens are not guaranteed. The randomness is on-chain pseudo-random, not Chainlink VRF.</p></details>
-<details><summary>Is this affiliated with Binance?</summary><p>No. PTERODAKTIL is an independent project on BNB Chain, not a Binance collaboration.</p></details>
+<section class="journal">
+<p class="kicker">Journal</p>
+<h2>Notes from the site</h2>
+<article><h3>What is PTERODAKTIL?</h3><p>A 1,600-piece NFT collection of fossil specimens: 16 unique specimens × 100 editions each. Each token shows a golden skeleton preserved on a white marble slab with a glowing blue runic border.</p></article>
+<article><h3>What do I receive?</h3><p>A BEP-721 token on BNB Chain with the specimen artwork and metadata. Token IDs are drawn randomly (1–1,600); the specimen of each token follows its ID range (100 editions per specimen).</p></article>
+<article><h3>Are the draws really random?</h3><p>Yes, with one honest limit: the randomness is on-chain pseudo-random (blockhash, timestamp, sender, counter) — not Chainlink VRF. Each mint's IDs are always different from each other, and usually span about 8–9 different specimens per 11-mint on average.</p></article>
+<article><h3>Is this affiliated with Binance?</h3><p>No. PTERODAKTIL is an independent project on BNB Chain, not a Binance collaboration.</p></article>
+</section>
 
+<section>
+<p class="kicker">Follow the dig</p>
 <h2>Support</h2>
-<div class="card"><p>Follow PTERODAKTIL on X for updates.</p>
-<div class="cta"><a href="https://x.com/intent/follow?screen_name=ptrdktlnft" target="_blank" rel="noopener">Follow on X</a><a href="https://x.com/intent/tweet?text=%F0%9F%A6%B4%20PTERODAKTIL%20mint%20is%20LIVE%20NOW%21%201%2C600%20fossils%20%C2%B7%2016%20specimens%20%C2%B7%20random%20mint%20%C2%B7%200.0005%20BNB%20%C2%B7%20max%2011/wallet.%20Mint%3A%20https%3A//www.pterodaktil.fun/%20%40ptrdktlnft%20%40BNBCHAIN%20%40binance%20%23PTERODAKTIL%20%23NFT%20%23BNBChain%20%23BSC%20%23NFTCommunity%20%23NFTCollection%20%23CryptoArt%20%23Web3%20%23NFTCollector" target="_blank" rel="noopener">Share on X</a><a class="gold" href="https://x.com/ptrdktlnft" target="_blank" rel="noopener">Visit Profile</a></div>
-<p>Official X: @ptrdktlnft</p></div>
-
-<h2>Contract</h2>
-<div class="card"><p>Contract: <span id="caddr">0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b</span></p>
-<div class="cta"><a href="#" onclick="navigator.clipboard.writeText('0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b');return false;">Copy Address</a><a class="gold" href="https://bscscan.com/address/0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b" target="_blank" rel="noopener">View on BscScan</a></div></div>
+<p>Follow PTERODAKTIL on X for updates. Official X: @ptrdktlnft</p>
+<div class="cta-row"><a href="https://x.com/intent/follow?screen_name=ptrdktlnft" target="_blank" rel="noopener">Follow on X</a><a class="ghost" href="https://x.com/intent/tweet?text=%F0%9F%A6%B4%20PTERODAKTIL%20mint%20is%20LIVE%20NOW%21%201%2C600%20fossils%20%C2%B7%2016%20specimens%20%C2%B7%20random%20mint%20%C2%B7%200.0005%20BNB%20%C2%B7%20max%2011/wallet.%20Mint%3A%20https%3A//www.pterodaktil.fun/%20%40ptrdktlnft%20%40BNBCHAIN%20%40binance%20%23PTERODAKTIL%20%23NFT%20%23BNBChain%20%23BSC%20%23NFTCommunity%20%23NFTCollection%20%23CryptoArt%20%23Web3%20%23NFTCollector" target="_blank" rel="noopener">Share on X</a><a class="ghost" href="https://x.com/ptrdktlnft" target="_blank" rel="noopener">Visit Profile</a></div>
+<p style="margin-top:20px">Contract: <span id="caddr">0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b</span> · <a href="https://bscscan.com/address/0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b" target="_blank" rel="noopener">View on BscScan</a></p>
+</section>
 
 <p class="foot">PTERODAKTIL — Mint is live now. Official X: @ptrdktlnft. NFTs are collectible items and do not promise any return.</p>
-</div>
+
+<div class="dock"><span>0.0005 BNB<small>per fossil · max 11/wallet</small></span><a href="#mint">Mint</a></div>
 
 <script>
 const CONTRACT='0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b';
@@ -159,11 +174,11 @@ async function readLive(){
   const price=parseInt(pr,16)/1e18;
   const open=parseInt(mo,16)===1;
   const st=document.getElementById('liveStats');
-  if(st)st.textContent='Minted: '+minted+' / 1,600 \u00b7 Price: '+price.toFixed(4)+' BNB \u00b7 Status: '+(open?'OPEN':'Opens 16:00 UTC');
+  if(st)st.textContent='Minted: '+minted+' / 1,600 · Price: '+price.toFixed(4)+' BNB · Status: '+(open?'OPEN':'CLOSED');
   const btn=document.getElementById('mintBtn');
-  if(btn){btn.disabled=!open;btn.textContent=open?'Mint':'Mint Opens 16:00 UTC';}
+  if(btn){btn.disabled=!open;btn.textContent=open?'Mint':'Mint Closed';}
   const mn=document.getElementById('mintNote');
-  if(mn)mn.textContent=open?'Mint is open \u2014 choose a quantity and confirm in your wallet.':'Mint opens today at 16:00 UTC. The button activates automatically once mint is open.';
+  if(mn)mn.textContent=open?'Mint is open now — choose a quantity and confirm in your wallet.':'Mint is not open right now.';
 }
 async function doMint(){
   const btn=document.getElementById('mintBtn');
