@@ -45,7 +45,7 @@ details p{font-family:system-ui,sans-serif;font-size:14px;color:#4A463C}
 <body>
 <header><div><b>PTERODAKTIL</b><br><span>FOSSILIZE METAVERSE</span></div><a class="mintbtn" href="#mint">Mint</a></header>
 <div class="wrap">
-<div class="banner">PREVIEW — Mint not open yet. Contract TBD.</div>
+<div class="banner">MINT OPENS TODAY AT 16:00 UTC</div>
 <div class="hero"><img src="assets/hero.jpg" alt="Paleo-Sky Glider fossil slab">
 <h1>PTERODAKTIL</h1>
 <p class="tagline">Ancient Bones, Golden Legends.</p>
@@ -86,18 +86,22 @@ details p{font-family:system-ui,sans-serif;font-size:14px;color:#4A463C}
 
 <h2 id="mint">03 — Mint</h2>
 <div class="card">
-<p><b>How mint works:</b> 1. Connect your wallet (BSC mainnet). 2. Choose a quantity (1–11). 3. Confirm the mint and pay in BNB — you receive 11 RANDOM token IDs from the remaining pool. Mint is not open yet — this is a preview.</p>
-<button class="btn" disabled>Preview — Mint Opens After Deploy</button>
-<p style="margin-top:10px"><b>Agent Mint:</b> paste the prompt below into your own AI agent. The contract address will appear here after deploy — until then, the prompt tells the agent to stop.</p>
+<p><b>How mint works:</b> 1. Connect your wallet (BSC mainnet). 2. Choose a quantity (1–11). 3. Confirm the mint and pay in BNB — you receive RANDOM token IDs from the remaining pool.</p>
+<p id="liveStats">Minted: … / 1,600 · Price: … · Status: …</p>
+<p id="statNote" style="display:none;color:#7A6420">Live stats unavailable — check again in a moment.</p>
+<p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></p>
+<button class="btn" id="mintBtn" disabled>Mint Opens 16:00 UTC</button>
+<p id="mintNote">Mint opens today at 16:00 UTC. The button activates automatically once mint is open.</p>
+<p style="margin-top:10px"><b>Agent Mint:</b> paste the prompt below into your own AI agent. Mint opens today at 16:00 UTC.</p>
 <pre style="white-space:pre-wrap;word-break:break-word;background:#0F1E3D;border-radius:12px;padding:14px;font-size:13px;line-height:1.5;color:#ECE7DB">You are my minting agent for the PTERODAKTIL NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-CONTRACT ADDRESS: TBD — mint is not open yet. STOP and tell me the contract is not deployed.
+CONTRACT ADDRESS: 0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b — mint opens today at 16:00 UTC. If mintOpen() is false, STOP and tell me mint is not open yet.
 
 COLLECTION: PTERODAKTIL — 1,600 supply, BEP-721, RANDOM token IDs (swap-and-pop pool)
 PRICE: 0.0005 BNB each (flat)
 MAX PER WALLET: 11 total (cumulative)
 
-Once the contract is deployed, the mint page will show its address. Before minting, you MUST call these read-only functions and report the exact results:
+Before minting, you MUST call these read-only functions and report the exact results:
 1. mintOpen() — if false, STOP.
 2. totalMinted() — current count and remaining supply.
 3. currentPrice() — exact price per NFT right now.
@@ -110,7 +114,7 @@ Then ask me to confirm the quantity (1–11, never more than 11 minus what I alr
 <details><summary>What is PTERODAKTIL?</summary><p>A 1,600-piece NFT collection of fossil specimens: 16 unique specimens × 100 editions each. Each token shows a golden skeleton preserved on a white marble slab with a glowing blue runic border.</p></details>
 <details><summary>How much does it cost?</summary><p>0.0005 BNB per NFT, flat price for all tokens.</p></details>
 <details><summary>How many can I mint?</summary><p>Max 11 per wallet, cumulative across all mints.</p></details>
-<details><summary>When does mint open?</summary><p>Not yet — this page is a preview. Mint opens after the contract is deployed.</p></details>
+<details><summary>When does mint open?</summary><p>Today at 16:00 UTC. The contract is deployed (0xCb3b…fc1b) and minting starts automatically at 16:00 UTC.</p></details>
 <details><summary>What do I receive?</summary><p>A BEP-721 token on BNB Chain with the specimen artwork and metadata. Token IDs are drawn randomly (1–1,600); the specimen of each token follows its ID range (100 editions per specimen).</p></details>
 <details><summary>Are the cards random?</summary><p>Yes. Each mint draws random token IDs from the remaining pool, so the 11 IDs in one transaction are always different from each other. They usually span several specimens (about 8–9 different kinds per 11-mint on average), but 11 different specimens are not guaranteed. The randomness is on-chain pseudo-random, not Chainlink VRF.</p></details>
 <details><summary>Is this affiliated with Binance?</summary><p>No. PTERODAKTIL is an independent project on BNB Chain, not a Binance collaboration.</p></details>
@@ -121,9 +125,77 @@ Then ask me to confirm the quantity (1–11, never more than 11 minus what I alr
 <p>Official X: @ptrdktlnft</p></div>
 
 <h2>Contract</h2>
-<div class="card"><p>Contract: TBD — will appear here after deploy.</p></div>
+<div class="card"><p>Contract: <span id="caddr">0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b</span></p>
+<div class="cta"><a href="#" onclick="navigator.clipboard.writeText('0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b');return false;">Copy Address</a><a class="gold" href="https://bscscan.com/address/0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b" target="_blank" rel="noopener">View on BscScan</a></div></div>
 
-<p class="foot">PTERODAKTIL — Preview only. No contract deployed yet. Official X: @ptrdktlnft. NFTs are collectible items and do not promise any return.</p>
+<p class="foot">PTERODAKTIL — Mint opens today at 16:00 UTC. Official X: @ptrdktlnft. NFTs are collectible items and do not promise any return.</p>
 </div>
+
+<script>
+const CONTRACT='0xCb3b48e7b659FC62fb3BDA8FF992e63B3eB6fc1b';
+const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
+const MAXW=11;
+async function rpcCall(data){
+  for(const u of RPCS){
+    try{
+      const c=new AbortController();const t=setTimeout(()=>c.abort(),10000);
+      const r=await fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:'eth_call',params:[{to:CONTRACT,data},'latest'],id:1}),signal:c.signal});
+      clearTimeout(t);
+      const j=await r.json();
+      if(j&&j.result!==undefined)return j.result;
+    }catch(e){}
+  }
+  return null;
+}
+const S={totalMinted:'0xa2309ff8',currentPrice:'0x9d1b464a',mintOpen:'0x24bbd049',mintedPerWallet:'0x3a602b4d'};
+async function readLive(){
+  const note=document.getElementById('statNote');
+  const tm=await rpcCall(S.totalMinted);
+  const pr=await rpcCall(S.currentPrice);
+  const mo=await rpcCall(S.mintOpen);
+  if(tm===null||pr===null||mo===null){if(note)note.style.display='block';return;}
+  if(note)note.style.display='none';
+  const minted=parseInt(tm,16);
+  const price=parseInt(pr,16)/1e18;
+  const open=parseInt(mo,16)===1;
+  const st=document.getElementById('liveStats');
+  if(st)st.textContent='Minted: '+minted+' / 1,600 \u00b7 Price: '+price.toFixed(4)+' BNB \u00b7 Status: '+(open?'OPEN':'Opens 16:00 UTC');
+  const btn=document.getElementById('mintBtn');
+  if(btn){btn.disabled=!open;btn.textContent=open?'Mint':'Mint Opens 16:00 UTC';}
+  const mn=document.getElementById('mintNote');
+  if(mn)mn.textContent=open?'Mint is open \u2014 choose a quantity and confirm in your wallet.':'Mint opens today at 16:00 UTC. The button activates automatically once mint is open.';
+}
+async function doMint(){
+  const btn=document.getElementById('mintBtn');
+  if(!btn||btn.disabled)return;
+  if(!window.ethereum){alert('No wallet found. Open this page in a wallet browser (e.g. Binance Wallet) to mint.');return;}
+  try{
+    const chain=await window.ethereum.request({method:'eth_chainId'});
+    if(chain!=='0x38'){
+      try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x38'}]});}
+      catch(e){await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x38',chainName:'BNB Smart Chain',nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},rpcUrls:['https://bsc-dataseed.binance.org/'],blockExplorerUrls:['https://bscscan.com']}]});}
+    }
+    const accounts=await window.ethereum.request({method:'eth_requestAccounts'});
+    const me=accounts[0];
+    const pr=await rpcCall(S.currentPrice);
+    if(pr===null){alert('Could not read the current price. Please try again.');return;}
+    const price=BigInt(pr);
+    const myHex=await rpcCall(S.mintedPerWallet+'000000000000000000000000'+me.slice(2).toLowerCase());
+    const myMinted=myHex?parseInt(myHex,16):0;
+    const qEl=document.getElementById('qty');
+    let q=parseInt(qEl?qEl.value:'1',10)||1;
+    const left=MAXW-myMinted;
+    if(left<=0){alert('You already minted the maximum of 11 for this wallet.');return;}
+    if(q>left)q=left;
+    const data='0xa0712d68'+q.toString(16).padStart(64,'0');
+    const value='0x'+(price*BigInt(q)).toString(16);
+    const tx=await window.ethereum.request({method:'eth_sendTransaction',params:[{from:me,to:CONTRACT,value,data}]});
+    alert('Mint transaction sent: '+tx);
+    setTimeout(readLive,15000);
+  }catch(e){alert('Mint failed or was rejected: '+(e&&e.message?e.message:e));}
+}
+document.getElementById('mintBtn').addEventListener('click',doMint);
+readLive();setInterval(readLive,30000);
+</script>
 </body>
 </html>
